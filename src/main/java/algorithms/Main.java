@@ -34,5 +34,26 @@ public class Main {
         System.out.println("Pattern: " + pattern2);
         System.out.println("LPS: " + java.util.Arrays.toString(KMP.buildLPS(pattern2)));
         System.out.println("Occurrences: " + KMP.search(text2, pattern2));
+
+        String text3 = "ABABCABABC";
+        String pattern3 = "ABC";
+
+        System.out.println("\n=== Rabin-Karp ===");
+        System.out.println("Text: " + text3);
+        System.out.println("Pattern: " + pattern3);
+        System.out.println("Occurrences: " + RabinKarp.search(text3, pattern3));
+
+        String text4 = "BANANA";
+
+        int[] suffixArray = {5, 3, 1, 0, 4, 2};
+
+        int[] lcp = Kasai.buildLCP(text4, suffixArray);
+
+        System.out.println("\n=== Kasai's Algorithm ===");
+        System.out.println("Text: " + text4);
+        System.out.println("Suffix Array: " +
+                java.util.Arrays.toString(suffixArray));
+        System.out.println("LCP Array: " +
+                java.util.Arrays.toString(lcp));
     }
 }
